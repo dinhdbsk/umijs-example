@@ -1,3 +1,8 @@
+import { setLocale } from "umi-plugin-react/locale";
+setTimeout(() => {
+  setLocale("en-US");
+}, 500);
+
 export const dva = {
   config: {
     onError(e) {
@@ -6,6 +11,6 @@ export const dva = {
     },
   },
   plugins: [
-    require('dva-logger')(),
+    require("dva-logger")(),
   ],
 };
