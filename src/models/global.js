@@ -1,16 +1,16 @@
-import { routerRedux } from 'dva/router';
+import {routerRedux} from "dva/router";
 
 export default {
-  namespace: 'global',
+  namespace: "global",
   state: {
-    text: 'hello umi+dva',
+    text: "hello umi+dva",
     login: false,
   },
   reducers: {
     setText(state) {
       return {
         ...state,
-        text: 'setted dva',
+        text: "setted dva",
       };
     },
     signin(state) {
@@ -21,14 +21,14 @@ export default {
     },
   },
   effects: {
-    *login(action, { call, put }) {
+    * login(action, {call, put}) {
       yield put({
-        type: 'signin',
+        type: "signin",
       });
-      yield put(routerRedux.push('/admin'));
+      yield put(routerRedux.push("/admin"));
     },
-    *throwError() {
-      throw new Error('hi error');
+    * throwError() {
+      throw new Error("hi error");
     },
   },
 };

@@ -1,17 +1,16 @@
-import { connect } from 'dva';
-import Redirect from 'umi/redirect';
+import React from "react";
+import {connect} from "dva";
+import Redirect from "umi/redirect";
 
-function Admin({ login }) {
-  if (login) {
-    return <h1>Admin Page</h1>;
-  } else {
-    return <Redirect to="/users" />;
-  }
+function Admin({login, loading}) {
+  console.log(loading);
+  return <h1>Admin Page</h1>;
 }
 
 function mapStateToProps(state) {
   return {
-    login: state.global.login,
+    login: state.global?.login,
+    loading: state.loading.effects["global/login"]
   };
 }
 
